@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space_grotesk.ttf") format("truetype");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/plus_jakarta_sans.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains_mono.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  --me-bg: #0b1221;
+  --me-surface: #111b2e;
+  --me-surface-variant: #1a2842;
+  --me-border: #273959;
+  --me-primary: #38bdf8;
+  --me-on-primary: #0b1221;
+  --me-secondary: #34d399;
+  --me-on-secondary: #0b1221;
+  --me-tertiary: #fbbf24;
+  --me-danger: #f43f5e;
+  --me-text: #f8fafc;
+  --me-text-muted: #94a3b8;
+  --me-base-font: 14px;
+}
+
+[data-theme="light"] {
+  --me-bg: #f1f5f9;
+  --me-surface: #ffffff;
+  --me-surface-variant: #e2e8f0;
+  --me-border: #cbd5e1;
+  --me-primary: #0284c7;
+  --me-on-primary: #ffffff;
+  --me-secondary: #059669;
+  --me-on-secondary: #ffffff;
+  --me-tertiary: #d97706;
+  --me-danger: #e11d48;
+  --me-text: #0f172a;
+  --me-text-muted: #475569;
+}
+
+[data-theme="high-contrast"] {
+  --me-bg: #000000;
+  --me-surface: #0a0a0a;
+  --me-surface-variant: #1a1a1a;
+  --me-border: #ffffff;
+  --me-primary: #ffff00;
+  --me-on-primary: #000000;
+  --me-secondary: #00ffaa;
+  --me-on-secondary: #000000;
+  --me-tertiary: #38bdf8;
+  --me-danger: #ff4d6d;
+  --me-text: #ffffff;
+  --me-text-muted: #e5e5e5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--me-bg);
+  color: var(--me-text);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  font-size: var(--me-base-font);
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+}
+
+.font-display {
+  font-family: "Space Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.font-mono-code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom sleek scrollbars for horizontal chip strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
